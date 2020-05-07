@@ -15,6 +15,7 @@ clean: .init ## ♻️  Cleanup dev environment
 	rm -rf /tmp/ehub_data
 
 dev: .init ## 🛠  Setup dev environment
+	# possible future TODO: a docker image with this data already loaded in
 	mkdir -p /tmp/ehub_data
 	aws s3 cp s3://net.energyhub.assets/public/dev-exercises/audit-data.tar.gz /tmp/ehub_data/audit-data.tar.gz
 	tar --extract --file /tmp/ehub_data/audit-data.tar.gz -C /tmp/ehub_data
