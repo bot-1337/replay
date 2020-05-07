@@ -1,0 +1,5 @@
+# ignore the built binary, but not the source package
+replay
+!pkg/replay
+
+.gocache

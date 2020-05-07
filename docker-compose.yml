@@ -1,0 +1,18 @@
+# docker compose docs: https://docs.docker.com/compose/compose-file/
+
+# docker compose version
+version: '3.7'
+
+services:
+
+  project:
+    container_name: project
+    image: golang:1.14.1
+    working_dir: /project
+    volumes:
+      # mount dev testing data
+      - /tmp/ehub_data:/tmp/ehub_data
+      # mount source code
+      - .:/project
+      # mount go package cache
+      - .gocache:/go/pkg
